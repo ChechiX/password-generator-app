@@ -9,54 +9,73 @@ export const App = () => {
         <div className="generator__output">
           <output>P4$5W0rD!</output>
 
-          <button>
+          <button className="generator__copy-button">
             <img src={iconCopy} alt="Copy Icon" />
           </button>
         </div>
 
-        <div className="generator__length">
-          <label htmlFor="length">Character Length</label>
-          <span>0</span>
+        <form className="generator__form" action="">
+          <div className="generator__length">
+            <label className="generator__character-label" htmlFor="length">
+              Character Length
+            </label>
 
-          <input type="range" min={0} max={20} value={0} id="length" />
-        </div>
+            <span className="generator__character-length">0</span>
 
-        <div className="generator__controls">
-          <div>
-            <input type="checkbox" id="uppercase" />
-            <label htmlFor="uppercase">Include Uppercase Letters</label>
+            <input
+              className="generator__length-input"
+              type="range"
+              min={0}
+              max={20}
+              value={0}
+              id="length"
+            />
           </div>
 
-          <div>
-            <input type="checkbox" id="lowercase" />
-            <label htmlFor="lowercase">Include Lowercase Letters</label>
+          <div className="generator__controls">
+            <div>
+              <input type="checkbox" id="uppercase" />
+
+              <label htmlFor="uppercase">Include Uppercase Letters</label>
+            </div>
+
+            <div>
+              <input type="checkbox" id="lowercase" />
+
+              <label htmlFor="lowercase">Include Lowercase Letters</label>
+            </div>
+
+            <div>
+              <input type="checkbox" id="numbers" />
+
+              <label htmlFor="numbers">Include Numbers</label>
+            </div>
+
+            <div>
+              <input type="checkbox" id="symbols" />
+
+              <label htmlFor="symbols">Include Symbols</label>
+            </div>
           </div>
 
-          <div>
-            <input type="checkbox" id="numbers" />
-            <label htmlFor="numbers">Include Numbers</label>
+          <div className="generator__strength-container">
+            <div className="generator__strength">
+              <p>Strength</p>
+
+              <div className="generator__strength-bars">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+
+            <button type="submit" className="generator__button">
+              Generate
+              <img src={iconArrowRight} alt="Arrow Right Icon" />
+            </button>
           </div>
-
-          <div>
-            <input type="checkbox" id="symbols" />
-            <label htmlFor="symbols">Include Symbols</label>
-          </div>
-        </div>
-
-        <div className="generator__strength">
-          <p>Strength</p>
-
-          <div className="generator__strength-bars">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </div>
-
-        <button className="generator__button">
-          Generate <img src={iconArrowRight} alt="Arrow Right Icon" />
-        </button>
+        </form>
       </section>
     </main>
   );

@@ -1,0 +1,167 @@
+@use '../variables' as v;
+@use '../typography' as t;
+
+.generator {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 4.0625rem;
+}
+
+.generator__header {
+  @include t.text-preset-4;
+  color: v.$grey-600;
+  text-align: center;
+}
+
+.generator__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.generator__output {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: v.$grey-800;
+
+  output {
+    @include t.text-preset-2;
+    color: v.$grey-700;
+  }
+}
+
+.generator__copy-button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.generator__form {
+  background-color: v.$grey-800;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.generator__length {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.generator__character-label {
+  @include t.text-preset-4;
+  color: v.$grey-200;
+}
+
+.generator__character-length {
+  @include t.text-preset-2;
+  color: v.$green-200;
+}
+
+.generator__length-input {
+  flex-basis: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+}
+
+.generator__length-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 28px;
+  height: 28px;
+  background-color: v.$grey-200;
+  border-radius: 50%;
+  margin-top: -10px;
+}
+
+.generator__length-input::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  background-color: v.$grey-200;
+  border-radius: 50%;
+}
+
+.generator__length-input::-webkit-slider-runnable-track {
+  height: 8px;
+  background-color: v.$grey-850;
+}
+
+.generator__length-input::-moz-range-track {
+  height: 8px;
+  background-color: v.$grey-850;
+}
+
+.generator__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    input[type='checkbox'] {
+      width: 20px;
+      height: 20px;
+      appearance: none;
+      background-color: transparent;
+      border: 2px solid v.$grey-200;
+    }
+
+    label {
+      @include t.text-preset-4;
+      color: v.$grey-200;
+    }
+  }
+}
+
+.generator__strength-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.generator__strength {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.875rem 1rem;
+  background-color: v.$grey-850;
+
+  p {
+    @include t.text-preset-4;
+    color: v.$grey-600;
+    text-transform: uppercase;
+  }
+}
+
+.generator__strength-bars {
+  display: flex;
+  gap: 0.5rem;
+
+  div {
+    width: 10px;
+    height: 28px;
+    border: 2px solid v.$grey-200;
+  }
+}
+
+.generator__button {
+  @include t.text-preset-4;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  color: v.$grey-800;
+  padding: 1rem 6.5rem;
+  background-color: v.$green-200;
+  text-transform: uppercase;
+  border: none;
+  font-family: inherit;
+}

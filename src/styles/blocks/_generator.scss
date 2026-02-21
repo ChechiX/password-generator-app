@@ -6,6 +6,11 @@
   flex-direction: column;
   gap: 1rem;
   margin-top: 4.0625rem;
+
+  @media (min-width: 48rem) {
+    max-width: 33.75rem;
+    margin: 8.3125rem auto 0;
+  }
 }
 
 .generator__header {
@@ -64,11 +69,17 @@
   color: v.$green-200;
 }
 
-.generator__length-input {
+.generator__length-wrapper {
+  padding: 10px 0;
   flex-basis: 100%;
+}
+
+.generator__length-input {
+  width: 100%;
   -webkit-appearance: none;
   appearance: none;
   background-color: transparent;
+  display: block;
 }
 
 .generator__length-input::-webkit-slider-thumb {
@@ -157,9 +168,10 @@
   @include t.text-preset-4;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   color: v.$grey-800;
-  padding: 1rem 6.5rem;
+  padding: 1rem 0;
   background-color: v.$green-200;
   text-transform: uppercase;
   border: none;

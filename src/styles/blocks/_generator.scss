@@ -5,11 +5,9 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 4.0625rem;
 
   @media (min-width: 48rem) {
-    max-width: 33.75rem;
-    margin: 8.3125rem auto 0;
+    width: 33.75rem;
   }
 }
 
@@ -37,10 +35,36 @@
   }
 }
 
+.generator__output--active output {
+  color: v.$grey-200;
+}
+
+.generator__copy {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.generator__copy-notification {
+  color: v.$green-200;
+  @include t.text-preset-4;
+  text-transform: uppercase;
+
+  @media (min-width: 48rem) {
+    @include t.text-preset-3;
+  }
+}
+
 .generator__copy-button {
   padding: 0;
   border: none;
   background-color: transparent;
+  cursor: pointer;
+  color: v.$green-200;
+}
+
+.generator__copy-button:active {
+  color: v.$white;
 }
 
 .generator__form {
@@ -89,6 +113,12 @@
   background-color: v.$grey-200;
   border-radius: 50%;
   margin-top: -10px;
+  cursor: pointer;
+}
+
+.generator__length-input::-webkit-slider-thumb:active {
+  background-color: v.$grey-850;
+  border: 2px solid #a4ffaf;
 }
 
 .generator__length-input::-moz-range-thumb {
@@ -98,14 +128,32 @@
   border-radius: 50%;
 }
 
+.generator__length-input::-moz-range-thumb:hover {
+  cursor: pointer;
+}
+
+.generator__length-input::-moz-range-thumb:active {
+  background-color: v.$grey-850;
+  border: 2px solid #a4ffaf;
+}
+
 .generator__length-input::-webkit-slider-runnable-track {
   height: 8px;
-  background-color: v.$grey-850;
+  background: linear-gradient(
+    to right,
+    v.$green-200 var(--progress),
+    v.$grey-850 var(--progress)
+  );
 }
 
 .generator__length-input::-moz-range-track {
   height: 8px;
   background-color: v.$grey-850;
+}
+
+.generator__length-input::-moz-range-progress {
+  height: 8px;
+  background-color: v.$green-200;
 }
 
 .generator__controls {
@@ -124,6 +172,19 @@
       appearance: none;
       background-color: transparent;
       border: 2px solid v.$grey-200;
+      cursor: pointer;
+    }
+
+    input[type='checkbox']:hover {
+      border-color: v.$green-200;
+    }
+
+    input[type='checkbox']:checked {
+      background-color: v.$green-200;
+      background-image: url(../../assets/images/icon-check.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      border: none;
     }
 
     label {
@@ -164,6 +225,11 @@
   }
 }
 
+.generator__strength-bar--filled {
+  background-color: v.$yellow-300;
+  border: none;
+}
+
 .generator__button {
   @include t.text-preset-4;
   display: inline-flex;
@@ -176,4 +242,15 @@
   text-transform: uppercase;
   border: none;
   font-family: inherit;
+  cursor: pointer;
+
+  @media (min-width: 48rem) {
+    @include t.text-preset-3;
+  }
+}
+
+.generator__button:active {
+  color: v.$green-200;
+  background-color: transparent;
+  border: 2px solid v.$green-200;
 }

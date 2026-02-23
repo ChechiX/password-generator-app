@@ -1,8 +1,4 @@
-import { useState } from 'react';
-
-export const LengthControl = () => {
-  const [length, setLength] = useState(0);
-
+export const LengthControl = ({ length, onChange, progress }) => {
   return (
     <div className="generator__length">
       <label className="generator__character-label" htmlFor="length">
@@ -13,6 +9,7 @@ export const LengthControl = () => {
 
       <div className="generator__length-wrapper">
         <input
+          style={{ '--progress': `${progress}%` }}
           className="generator__length-input"
           type="range"
           min={0}
@@ -20,7 +17,7 @@ export const LengthControl = () => {
           value={length}
           step={1}
           id="length"
-          onChange={(e) => setLength(+e.target.value)}
+          onChange={(e) => onChange(+e.target.value)}
         />
       </div>
     </div>

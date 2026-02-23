@@ -35,4 +35,8 @@ body {
   background: linear-gradient(to right, v.$grey-900, v.$grey-950);
   padding: 0 1rem;
   font-family: 'JetBrains Mono';
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

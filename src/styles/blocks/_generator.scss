@@ -247,6 +247,22 @@
   }
 }
 
+.generator__strength-indicator {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-transform: uppercase;
+}
+
+.generator__strength-label {
+  color: v.$grey-200;
+  @include t.text-preset-3;
+
+  @media (min-width: 48rem) {
+    @include t.text-preset-2;
+  }
+}
+
 .generator__strength-bars {
   display: flex;
   gap: 0.5rem;
